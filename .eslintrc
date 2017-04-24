@@ -5,4 +5,7 @@
       "experimentalObjectRestSpread": true
     },
   },
+  "rules": {
+    "linebreak-style": "off"
+  }
 }
