@@ -6,7 +6,18 @@ import { createStore } from 'redux';
 import todoApp from './reducers';
 import App from './components/App';
 
-const store = createStore(todoApp);
+// Não é recomendavel definir estado total da
+// aplicação em um unico lugar pois dificulta testes e mudancas
+const persistedState = {
+  todos: [{
+    id: '0',
+    text: 'Welcome back!',
+    completed: false,
+  }],
+};
+
+const store = createStore(todoApp, persistedState);
+console.log(store.getState()); //  eslint-disable-line
 
 render(
   <Provider store={store}>
